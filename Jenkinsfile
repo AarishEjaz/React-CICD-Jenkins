@@ -24,15 +24,3 @@ pipeline {
 
 //add npm run build in the sh step
 
-// pipeline {
-//     agent any
-//     stages {
-//         stage('Hello') {
-//             steps {
-//                 script {
-//                     bat 'echo Hello World'
-//                 }
-//             }
-//         }
-//     }
-// }
