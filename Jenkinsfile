@@ -35,8 +35,21 @@ pipeline {
                 '''
             }
         }
+        stage('test'){
+            agent{
+                docker{
+                    image 'node:18-alpine'
+                    args '-u root'
+                    reuseNode true
+                }
+            }
+            steps{
+                sh '''
+                    npm run test
+                '''
+            }
+        }
     }
 }
 
-//add npm run build in the sh step
 
