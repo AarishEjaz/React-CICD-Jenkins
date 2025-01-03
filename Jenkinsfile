@@ -5,7 +5,7 @@ pipeline {
     }
     stages {
 
-        statge('Clean up code'){
+        stage('Clean up code'){
             steps {
                 cleansWs()
             }
