@@ -7,7 +7,7 @@ pipeline {
 
         stage('Clean up code'){
             steps {
-                cleansWs()
+                cleanWs()
             }
         }
 
