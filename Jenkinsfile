@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+
+        statge('Clean up code'){
+            steps {
+                cleansWs()
+            }
+        }
         stage('Build') {
             agent {
                 docker {
@@ -10,11 +16,6 @@ pipeline {
                 }
             }
             steps {
-                step('clean up workspace') {
-                    cleanWs()
-                }
-
-                step('build project'){
                     sh '''
                     ls -l
                     node --version
@@ -23,8 +24,6 @@ pipeline {
                     npm run build
                     ls -l
                 '''
-                }
-                
             }
         }
     }
