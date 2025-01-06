@@ -66,6 +66,7 @@ pipeline {
                 sh '''
                     npm install vercel -g 
                     echo $MY_VAR
+                    vercel --prod --token=$vercel-token --confirm --name=cicdproject
                 '''
             }
         }
