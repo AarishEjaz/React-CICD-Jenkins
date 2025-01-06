@@ -1,7 +1,8 @@
 pipeline {
     agent any
     environment {
-        MY_VAR = "my value"
+        NODE_ENV = "test"
+        VERCEL_TOKEN = credentials('vercel-token')
     }
     options{
         skipDefaultCheckout(true)
